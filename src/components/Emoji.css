@@ -1,11 +1,11 @@
 button {
-    color: "white";
-    background-color: "red";
-    border-radius: "8px";
+  color: "white";
+  background-color: "red";
+  border-radius: "8px";
 }
 * {
-    margin: 0;
-    color:blueviolet;
-    background-color:cornsilk;
-    -ms-text-size-adjust:auto ;
+  margin: 0;
+  color: blueviolet;
+  background-color: cornsilk;
+  -ms-text-size-adjust: auto;
 }
