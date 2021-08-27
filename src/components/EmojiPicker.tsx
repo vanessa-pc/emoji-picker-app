@@ -3,13 +3,11 @@ import Emojis from "./Emojis";
 // import './Emoji.css'
 
 export default function EmojiPicker(): JSX.Element {
-  const [pickedEmoji, setPickedEmoji] = useState("");
 
-  const [lastEmoji, setLastEmoji] = useState<string[]>([]);
+  const [storedEmoji, setstoredEmoji] = useState<string[]>([]);
 
-  const handlePickedEmoji = (emoji: string) => {
-    setPickedEmoji(emoji);
-    setLastEmoji((emojis) => [...emojis, emoji]);
+  const handleStoredEmoji = (emoji: string) => {
+    setstoredEmoji((emojis) => [...emojis, emoji]);
   };
 
   return (
@@ -19,14 +17,14 @@ export default function EmojiPicker(): JSX.Element {
       <div>
         {Emojis.map(function (emoji, index) {
           return (
-            <button onClick={() => handlePickedEmoji(emoji)} key={index}>
+            <button onClick={() => handleStoredEmoji(emoji)} key={index}>
               {emoji}
             </button>
           );
         })}
       </div>
-      <p>You picked: {pickedEmoji}</p>
-      <p>Your previously picked emojis: {lastEmoji}</p>
+      <p>You picked: {storedEmoji[storedEmoji.length-1]}</p>
+      <p>Your previously picked emojis: {storedEmoji}</p>
     </>
   );
 }
